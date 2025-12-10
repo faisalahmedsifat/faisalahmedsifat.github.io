@@ -5,4 +5,4 @@
 :HL["/jomidaar.png","image"]
 :HL["/flexx.png","image"]
 :HL["/3d-segmentation.png","image"]
-0:{"buildId":"UlQanxpMAIVnAJg8y0EIj","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"ggx24UCxASefMvBVe_T-D","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
