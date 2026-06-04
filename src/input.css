@@ -19,6 +19,7 @@
       linear-gradient(90deg, rgba(30, 41, 59, 0.35) 1px, transparent 1px),
       #020617;
     background-size: auto, 36px 36px, 36px 36px, auto;
+    color: #d7e2f0;
   }
 
   a,
@@ -35,19 +36,43 @@
   summary::-webkit-details-marker {
     display: none;
   }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.28);
+    color: white;
+  }
 }
 
 @layer components {
+  .page-shell::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.03), transparent 18%),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.04) 0,
+        rgba(15, 23, 42, 0.04) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+    mix-blend-mode: screen;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
   .shell {
-    @apply mx-auto w-full max-w-6xl px-6 md:px-8;
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8;
   }
 
   .section-block {
-    @apply py-20 md:py-28;
+    @apply py-16 sm:py-20 md:py-28;
   }
 
   .panel {
-    @apply border border-slate-800/90 bg-slate-900/70 shadow-[4px_4px_0px_rgba(34,211,238,0.12)] backdrop-blur;
+    @apply relative overflow-hidden border border-slate-800/90 bg-slate-900/70 shadow-[4px_4px_0px_rgba(34,211,238,0.12)] backdrop-blur;
   }
 
   .eyebrow {
@@ -55,7 +80,7 @@
   }
 
   .section-title {
-    @apply font-serif text-5xl leading-none tracking-tight text-white md:text-7xl;
+    @apply font-serif text-4xl leading-[0.92] tracking-tight text-white sm:text-5xl md:text-7xl;
   }
 
   .nav-link {
@@ -80,5 +105,229 @@
 
   .tag-row {
     @apply font-mono text-xs uppercase tracking-[0.12em] text-slate-500;
+  }
+
+  .hero-grid {
+    @apply relative overflow-hidden;
+  }
+
+  .hero-grid::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.12), transparent 28%),
+      radial-gradient(circle at 88% 18%, rgba(56, 189, 248, 0.09), transparent 24%);
+    animation: tacticalPulse 10s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  .mobile-nav {
+    @apply relative;
+  }
+
+  .mobile-nav[open] summary {
+    @apply border-cyan-300 text-cyan-300;
+  }
+
+  .mobile-nav-panel {
+    @apply fixed top-[4.75rem] right-4 left-4 z-50 flex flex-col gap-3 p-4 sm:left-auto sm:w-64;
+  }
+
+  .mobile-nav-panel::before {
+    content: "";
+    @apply absolute inset-0 border border-cyan-300/20;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+    pointer-events: none;
+  }
+
+  .tactical-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(120deg, transparent 0%, transparent 44%, rgba(34, 211, 238, 0.08) 50%, transparent 56%, transparent 100%);
+    transform: translateX(-120%);
+    transition: transform 700ms ease;
+  }
+
+  .tactical-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 1px solid rgba(34, 211, 238, 0.08);
+    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+  }
+
+  .tactical-panel:hover::before,
+  .tactical-panel:focus-within::before {
+    transform: translateX(120%);
+  }
+
+  .terminal-frame {
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.08),
+      8px 8px 0 rgba(15, 23, 42, 0.55);
+  }
+
+  .terminal-topbar {
+    @apply flex items-center gap-2 border-b border-slate-800 pb-4;
+  }
+
+  .status-dot {
+    @apply h-2.5 w-2.5 rounded-full bg-cyan-300/70;
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
+    animation: statusBlink 2.4s ease-in-out infinite;
+  }
+
+  .status-dot:nth-child(2) {
+    animation-delay: 180ms;
+  }
+
+  .status-dot:nth-child(3) {
+    animation-delay: 360ms;
+  }
+
+  .terminal-log {
+    @apply rounded-sm border border-slate-800/80 bg-slate-950/70 p-4 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-slate-400;
+  }
+
+  .terminal-log p {
+    @apply flex flex-wrap gap-x-3 gap-y-1 py-1;
+  }
+
+  .terminal-log span {
+    @apply text-cyan-300;
+  }
+
+  .hero-glitch {
+    text-shadow: 0 0 18px rgba(34, 211, 238, 0.08);
+  }
+
+  .reveal {
+    position: relative;
+    overflow: clip;
+    opacity: 0;
+    filter: blur(2px);
+    transform: translate3d(0, 12px, 0) scale(0.985);
+    transition:
+      opacity 180ms linear,
+      transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 220ms ease;
+    will-change: opacity, transform, filter;
+  }
+
+  .reveal::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 22%;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.22), transparent);
+    opacity: 0;
+    transform: translateX(-180%);
+    mix-blend-mode: screen;
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .reveal-visible::after {
+    animation: tacticalSweep 320ms cubic-bezier(0.16, 1, 0.3, 1) 1;
+  }
+
+  .delay-1 {
+    transition-delay: 35ms;
+  }
+
+  .delay-2 {
+    transition-delay: 70ms;
+  }
+
+  .delay-3 {
+    transition-delay: 105ms;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 639px) {
+  .mobile-nav-panel {
+    max-width: calc(100vw - 2rem);
+  }
+
+  .mobile-nav-panel .nav-link,
+  .mobile-nav-panel .button-secondary {
+    @apply justify-center py-3 text-center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes tacticalPulse {
+  0%,
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scale(1.05) translate3d(0, 1.5%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes statusBlink {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tacticalSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-180%);
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(560%);
   }
 }
