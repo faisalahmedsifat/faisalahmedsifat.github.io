@@ -276,26 +276,9 @@
   .delay-3 {
     transition-delay: 105ms;
   }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-@media (max-width: 639px) {
-  .mobile-nav-panel {
-    max-width: calc(100vw - 2rem);
-  }
-
-  .mobile-nav-panel .nav-link,
-  .mobile-nav-panel .button-secondary {
-    @apply justify-center py-3 text-center;
-  }
 
   .proof-grid {
-    @apply grid gap-4 lg:grid-cols-4 sm:grid-cols-2;
+    @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-4;
   }
 
   .list-grid {
@@ -366,6 +349,23 @@
 
   .link-grid {
     @apply grid gap-3 sm:grid-cols-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 639px) {
+  .mobile-nav-panel {
+    max-width: calc(100vw - 2rem);
+  }
+
+  .mobile-nav-panel .nav-link,
+  .mobile-nav-panel .button-secondary {
+    @apply justify-center py-3 text-center;
   }
 }
 
