@@ -3,502 +3,337 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faisal Ahmed Sifat — Distributed Systems · ML Research</title>
+  <meta
+    name="description"
+    content="Faisal Ahmed Sifat is a software engineer and applied ML researcher focused on distributed systems, infrastructure, and peer-reviewed research."
+  />
+  <title>Faisal Ahmed Sifat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
+    <div class="shell flex items-center justify-between gap-4 py-4">
+      <a href="#top" class="font-serif text-2xl font-semibold tracking-tight text-white">FAS.</a>
 
-  <style>
-    /* ─── TOKENS ───────────────────────────────────────────────── */
-    :root {
-      --bg:        #0d1117;
-      --bg-2:      #161b22;
-      --bg-panel:  #1f242c;
-      --cyan:      #00f0ff;
-      --cyan-dim:  rgba(0, 240, 255, 0.12);
-      --cyan-mid:  rgba(0, 240, 255, 0.35);
-      --amber:     #f5c842;
-      --amber-dim: rgba(245, 200, 66, 0.15);
-      --white:     #ffffff;
-      --gray-1:    #e2e8f0;
-      --gray-2:    #94a3b8;
-      --gray-3:    #475569;
-      --border:    #30363d;
-      --border-hi: #00f0ff;
-      --font-mono: 'Space Mono', monospace;
-      --font-serif:'Cormorant Garamond', serif;
-      --font-body: 'DM Sans', sans-serif;
-      
-      /* Tactile Shadow Tokens */
-      --shadow-sm: 2px 2px 0px var(--cyan);
-      --shadow-md: 4px 4px 0px rgba(0, 240, 255, 0.4);
-      --shadow-lg: 6px 6px 0px rgba(0, 240, 255, 0.2);
-    }
+      <nav class="hidden items-center gap-6 md:flex">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#research">Research</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
 
-    /* ─── RESET ────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; }
-    body {
-      background: var(--bg);
-      color: var(--gray-1);
-      font-family: var(--font-body);
-      font-weight: 300;
-      overflow-x: hidden;
-      line-height: 1.7;
-    }
-    a { color: inherit; text-decoration: none; }
-    ::selection { background: var(--cyan); color: var(--bg); }
+      <div class="hidden md:block">
+        <a class="button-secondary" href="./public/faisal-ahmed-sifat-cv.pdf" download>Download CV</a>
+      </div>
 
-    /* ─── SCROLLBAR ─────────────────────────────────────────────── */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--bg); border-left: 1px solid var(--border); }
-    ::-webkit-scrollbar-thumb { background: var(--gray-3); }
-    ::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+      <details class="relative md:hidden">
+        <summary class="button-secondary cursor-pointer list-none">Menu</summary>
+        <nav class="panel absolute right-0 mt-3 flex w-56 flex-col gap-3 p-4">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#research">Research</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <a class="button-secondary justify-center" href="./public/faisal-ahmed-sifat-cv.pdf" download>Download CV</a>
+        </nav>
+      </details>
+    </div>
+  </header>
 
-    /* ─── GRID BACKGROUND ───────────────────────────────────────── */
-    body::before {
-      content: "";
-      position: fixed; inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 40px 40px;
-      opacity: 0.2;
-      z-index: -20;
-      pointer-events: none;
-    }
+  <main id="top">
+    <section class="border-b border-slate-900/80">
+      <div class="shell grid gap-10 py-20 md:py-28 lg:grid-cols-[minmax(0,1.4fr)_minmax(20rem,0.8fr)] lg:items-end">
+        <div class="space-y-8">
+          <p class="eyebrow">Distributed Systems · Applied ML Research</p>
 
-    /* ─── UTILITY & TACTILE CLASSES ─────────────────────────────── */
-    .mono    { font-family: var(--font-mono); }
-    .serif   { font-family: var(--font-serif); }
-    .label   { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; color: var(--cyan); text-transform: uppercase; }
-    .muted   { color: var(--gray-2); }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-    .section { padding: 8rem 0; }
+          <div class="space-y-5">
+            <h1 class="font-serif text-6xl leading-none tracking-tight text-white sm:text-7xl md:text-8xl">
+              Faisal
+              <span class="block text-slate-500">Ahmed Sifat</span>
+            </h1>
+            <p class="max-w-2xl text-lg leading-8 text-slate-300">
+              Software engineer and researcher working where resilient infrastructure and machine learning meet.
+              I build production systems, publish peer-reviewed work, and care more about signal than presentation noise.
+            </p>
+          </div>
 
-    /* Tactile Cards */
-    .tactile-card {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-    }
-    .tactile-card:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--cyan);
-    }
-    .tactile-card:active {
-      transform: translate(2px, 2px);
-      box-shadow: 0px 0px 0px transparent;
-    }
+          <div class="flex flex-wrap gap-4">
+            <a class="button-primary" href="#projects">Selected Work</a>
+            <a class="button-secondary" href="#research">Research</a>
+          </div>
 
-    /* Tactile Buttons */
-    .tactile-btn {
-      font-family: var(--font-mono); font-size: 0.72rem;
-      letter-spacing: 0.1em; padding: 0.75rem 1.75rem;
-      border: 1px solid var(--border-hi); 
-      background: var(--cyan-dim);
-      color: var(--cyan); 
-      display: inline-block;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
-      cursor: pointer;
-    }
-    .tactile-btn:hover { background: var(--cyan); color: var(--bg); }
-    .tactile-btn:active {
-      transform: translate(2px, 2px);
-      box-shadow: 0px 0px 0px transparent;
-    }
-    .tactile-btn.ghost { background: var(--bg); border-color: var(--gray-3); color: var(--gray-2); box-shadow: 2px 2px 0px var(--gray-3); }
-    .tactile-btn.ghost:hover { border-color: var(--white); color: var(--bg); background: var(--white); box-shadow: 2px 2px 0px var(--white); }
-    .tactile-btn.ghost:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px transparent; }
+          <ul class="grid gap-3 text-sm text-slate-400 sm:grid-cols-3">
+            <li class="panel p-4">
+              <p class="eyebrow">Publications</p>
+              <p class="mt-3 font-serif text-3xl text-white">4</p>
+            </li>
+            <li class="panel p-4">
+              <p class="eyebrow">Focus</p>
+              <p class="mt-3 font-medium text-white">Systems, ML, infra</p>
+            </li>
+            <li class="panel p-4">
+              <p class="eyebrow">Base</p>
+              <p class="mt-3 font-medium text-white">Dhaka, Bangladesh</p>
+            </li>
+          </ul>
+        </div>
 
-    /* section heading */
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 300;
-      line-height: 0.9;
-      letter-spacing: -0.02em;
-      color: var(--white);
-    }
-    .section-title span { color: var(--gray-3); }
-    .rule { width: 3rem; height: 1px; background: var(--cyan); opacity: 0.5; margin: 1.5rem 0; }
+        <aside class="panel p-6 md:p-8">
+          <p class="eyebrow">Current Snapshot</p>
+          <div class="mt-6 space-y-6">
+            <div>
+              <p class="meta-label">Now</p>
+              <p class="mt-2 text-base leading-7 text-slate-300">
+                Building workflow systems and enterprise software while continuing applied ML and medical AI research.
+              </p>
+            </div>
+            <div>
+              <p class="meta-label">Interests</p>
+              <p class="mt-2 text-base leading-7 text-slate-300">
+                Fault-tolerant execution, sandboxed compute, event-driven systems, 3D vision, and production AI tooling.
+              </p>
+            </div>
+            <div>
+              <p class="meta-label">Links</p>
+              <div class="mt-3 flex flex-wrap gap-3">
+                <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="chip-link" href="https://linkedin.com/in/faisalahmedsifat" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a class="chip-link" href="mailto:faisalahmed531@gmail.com">Email</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    /* ─── NAV ───────────────────────────────────────────────────── */
-    #nav {
-      position: sticky; top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: 1100px; margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .nav-logo {
-      font-family: var(--font-serif);
-      font-size: 1.5rem; font-weight: 600;
-      letter-spacing: -0.03em; color: var(--white);
-      transition: transform 0.1s ease;
-    }
-    .nav-logo:active { transform: translateY(2px); }
-    .nav-links {
-      display: flex; align-items: center; gap: 0;
-    }
-    .nav-links .nav-group {
-      display: flex; align-items: center;
-      padding: 0.4rem 0.5rem;
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      box-shadow: 2px 2px 0px var(--border);
-    }
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 0.7rem; letter-spacing: 0.08em;
-      padding: 0.4rem 1rem;
-      color: var(--gray-2);
-      transition: color 0.1s;
-    }
-    .nav-links a:hover { color: var(--cyan); }
-    .nav-links a:active { transform: translateY(1px); }
-    
-    .nav-cv {
-      font-family: var(--font-mono);
-      font-size: 0.7rem; letter-spacing: 0.08em;
-      padding: 0.5rem 1.25rem;
-      border: 1px solid var(--gray-3);
-      background: var(--bg);
-      color: var(--gray-1);
-      box-shadow: 2px 2px 0px var(--gray-3);
-      transition: transform 0.1s, box-shadow 0.1s, background 0.1s;
-      margin-left: 1.5rem;
-    }
-    .nav-cv:hover { background: var(--gray-1); color: var(--bg); }
-    .nav-cv:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px transparent; }
+    <section id="about" class="section-block">
+      <div class="shell grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+        <div class="space-y-4">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">Engineering with <span>research discipline</span></h2>
+        </div>
 
-    /* mobile burger */
-    #burger {
-      display: none; flex-direction: column;
-      gap: 5px; cursor: pointer; background: none; border: none; padding: 4px;
-    }
-    #burger span { width: 22px; height: 1.5px; background: var(--white); display: block; transition: all 0.3s; }
-    #mobile-menu {
-      display: none; position: fixed; inset: 0; top: 60px;
-      background: var(--bg); z-index: 99;
-      flex-direction: column; justify-content: center; align-items: center;
-      gap: 2.5rem; border-top: 1px solid var(--border);
-    }
-    #mobile-menu.open { display: flex; }
-    #mobile-menu a {
-      font-family: var(--font-serif); font-size: 2.5rem;
-      color: var(--gray-1); transition: color 0.2s;
-    }
-    #mobile-menu a:hover { color: var(--cyan); }
+        <div class="space-y-6 text-base leading-8 text-slate-300">
+          <p>
+            My work sits at the boundary between distributed systems and machine learning. I care about the systems
+            problems that appear when you try to make ML practical: isolation, orchestration, reliability, and cost.
+          </p>
+          <p>
+            I have built workflow engines, event-driven services, and deployment tooling for multi-tenant products. In
+            parallel, I have published peer-reviewed work on 3D computer vision, prosthetic dentistry, and clinical AI.
+          </p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="panel p-5">
+              <p class="meta-label">What I build</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">
+                Execution engines, orchestration backends, internal tooling, and infrastructure-heavy product systems.
+              </p>
+            </div>
+            <div class="panel p-5">
+              <p class="meta-label">What I study</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">
+                Applied ML systems, 3D data pipelines, explainable AI, and constraints at the network edge.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    @media (max-width: 768px) {
-      .nav-links, .nav-cv { display: none; }
-      #burger { display: flex; }
-    }
+    <section id="experience" class="section-block border-y border-slate-900/80 bg-slate-950/60">
+      <div class="shell">
+        <div class="max-w-3xl space-y-4">
+          <p class="eyebrow">Experience</p>
+          <h2 class="section-title">Recent <span>work</span></h2>
+        </div>
 
-    /* ─── HERO ──────────────────────────────────────────────────── */
-    #hero {
-      min-height: calc(100vh - 70px);
-      display: flex; align-items: center;
-      padding: 4rem 0;
-      position: relative;
-    }
-    .hero-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-    .hero-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.72rem; letter-spacing: 0.15em;
-      color: var(--cyan); margin-bottom: 2rem;
-    }
-    .hero-sub {
-      font-family: var(--font-mono); font-size: 0.65rem;
-      letter-spacing: 0.2em; color: var(--gray-3);
-      text-transform: uppercase; margin-bottom: 1.5rem;
-    }
-    .hero-name {
-      font-family: var(--font-serif);
-      font-size: clamp(4rem, 12vw, 9.5rem);
-      font-weight: 300; line-height: 0.88;
-      letter-spacing: -0.03em;
-      margin-bottom: 3rem;
-    }
-    .hero-name .line-1 { display: block; color: var(--white); }
-    .hero-name .line-2 { display: block; color: var(--gray-3); }
-    .hero-rule {
-      width: 4rem; height: 1px; background: rgba(0,240,255,0.4);
-      margin-bottom: 2.5rem;
-    }
-    .hero-card {
-      display: inline-block;
-      padding: 1.25rem 1.75rem;
-    }
-    .hero-card-tag {
-      font-family: var(--font-mono); font-size: 0.6rem;
-      letter-spacing: 0.12em; color: var(--gray-3);
-      text-transform: uppercase; margin-bottom: 0.6rem;
-    }
-    .hero-card-text {
-      font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.5vw, 1.55rem);
-      font-weight: 300; line-height: 1.4; color: var(--white);
-      max-width: 560px;
-    }
-    .hero-card-text .accent { color: var(--cyan); border-bottom: 1.5px solid var(--cyan); padding-bottom: 1px; }
-    .hero-ctas {
-      display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap;
-    }
+        <div class="mt-10 grid gap-5">
+          <article class="panel grid gap-6 p-6 md:grid-cols-[14rem_minmax(0,1fr)] md:p-7">
+            <div>
+              <p class="font-serif text-3xl text-white">Software Engineer</p>
+              <p class="mt-2 text-sm text-slate-400">All Generation Tech</p>
+              <p class="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">Feb 2026 — Present</p>
+            </div>
+            <p class="text-sm leading-7 text-slate-300">
+              Building enterprise dashboards and workflow systems for US-based clients across backend APIs, data design,
+              and frontend integration.
+            </p>
+          </article>
 
-    /* ─── ABOUT ─────────────────────────────────────────────────── */
-    #about .grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: start;
-    }
-    .about-stats {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; margin-top: 2.5rem;
-      border: 1px solid var(--border);
-      background: var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-    .stat-card {
-      background: var(--bg-panel); padding: 1.25rem 1rem;
-      text-align: center;
-    }
-    .stat-num {
-      font-family: var(--font-serif); font-size: 2.8rem;
-      font-weight: 300; color: var(--cyan); line-height: 1;
-      display: block; margin-bottom: 0.3rem;
-    }
-    .stat-label {
-      font-family: var(--font-mono); font-size: 0.58rem;
-      letter-spacing: 0.1em; color: var(--gray-3);
-      text-transform: uppercase;
-    }
-    .about-text p { color: var(--gray-2); margin-bottom: 1.25rem; font-size: 0.95rem; line-height: 1.8; }
-    .about-text p:first-child::first-letter {
-      font-family: var(--font-serif); font-size: 3.5rem;
-      font-weight: 300; float: left; line-height: 0.8;
-      margin-right: 0.15em; color: var(--white);
-    }
-    @media (max-width: 768px) { #about .grid { grid-template-columns: 1fr; gap: 3rem; } }
+          <article class="panel grid gap-6 p-6 md:grid-cols-[14rem_minmax(0,1fr)] md:p-7">
+            <div>
+              <p class="font-serif text-3xl text-white">Founder &amp; Technical Lead</p>
+              <p class="mt-2 text-sm text-slate-400">AlphaWolf Ventures</p>
+              <p class="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">Mar 2024 — Present</p>
+            </div>
+            <p class="text-sm leading-7 text-slate-300">
+              Architected distributed workflow execution, AI workload isolation, and CQRS-style service boundaries for
+              products including Tensorify.io, Flexx.dev, and Jomidaar.
+            </p>
+          </article>
 
-    /* ─── EXPERIENCE ────────────────────────────────────────────── */
-    #experience { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    #experience .timeline {
-      max-width: 900px; margin: 4rem auto 0; position: relative;
-    }
-    #experience .timeline::before {
-      content: ""; position: absolute;
-      left: 50%; top: 0; bottom: 0; width: 2px;
-      background: var(--border); transform: translateX(-50%);
-    }
-    .tl-item {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0; margin-bottom: 4rem; position: relative;
-    }
-    .tl-dot {
-      position: absolute; left: 50%; top: 0.5rem;
-      width: 14px; height: 14px;
-      background: var(--bg); border: 2px solid var(--cyan);
-      transform: translateX(-50%);
-      box-shadow: 2px 2px 0px rgba(0, 240, 255, 0.4);
-    }
-    .tl-left { padding-right: 3rem; text-align: right; }
-    .tl-right { padding-left: 3rem; }
-    .tl-role {
-      font-family: var(--font-serif); font-size: 1.5rem;
-      font-weight: 400; color: var(--white); line-height: 1.2;
-      margin-bottom: 0.3rem;
-    }
-    .tl-org { font-size: 0.85rem; color: var(--gray-2); margin-bottom: 0.3rem; }
-    .tl-date {
-      font-family: var(--font-mono); font-size: 0.6rem;
-      letter-spacing: 0.12em; color: var(--cyan);
-      text-transform: uppercase;
-    }
-    .tl-desc { font-size: 0.88rem; color: var(--gray-2); line-height: 1.7; background: var(--bg-panel); padding: 1.25rem; border: 1px solid var(--border); box-shadow: 2px 2px 0px var(--border); }
-    
-    .tl-item:nth-child(even) .tl-left { order: 2; text-align: left; padding-left: 3rem; padding-right: 0; }
-    .tl-item:nth-child(even) .tl-right { order: 1; padding-right: 3rem; padding-left: 0; text-align: right; }
+          <article class="panel grid gap-6 p-6 md:grid-cols-[14rem_minmax(0,1fr)] md:p-7">
+            <div>
+              <p class="font-serif text-3xl text-white">AI/ML Researcher</p>
+              <p class="mt-2 text-sm text-slate-400">NSU × University of Adelaide</p>
+              <p class="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">Jul 2024 — Jan 2025</p>
+            </div>
+            <p class="text-sm leading-7 text-slate-300">
+              Worked on PointNet++ domain adaptation, vision transformer pipelines, and clinical decision-support
+              systems, contributing to four peer-reviewed publications.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    @media (max-width: 768px) {
-      #experience .timeline::before { left: 1rem; }
-      .tl-item { grid-template-columns: 1fr; }
-      .tl-dot { left: 1rem; }
-      .tl-left, .tl-right { padding-left: 3rem; padding-right: 0; text-align: left; }
-      .tl-item:nth-child(even) .tl-left, .tl-item:nth-child(even) .tl-right { order: unset; padding-left: 3rem; padding-right: 0; text-align: left; }
-    }
+    <section id="projects" class="section-block">
+      <div class="shell">
+        <div class="max-w-3xl space-y-4">
+          <p class="eyebrow">Projects</p>
+          <h2 class="section-title">Selected <span>work</span></h2>
+        </div>
 
-    /* ─── PROJECTS ──────────────────────────────────────────────── */
-    #projects .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 4rem;
-    }
-    .proj-card {
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .proj-type {
-      font-family: var(--font-mono); font-size: 0.58rem;
-      letter-spacing: 0.12em; color: var(--cyan);
-      margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;
-    }
-    .proj-name {
-      font-family: var(--font-serif); font-size: 1.8rem;
-      font-weight: 400; color: var(--white);
-      line-height: 1.1; margin-bottom: 1rem;
-    }
-    .proj-desc { font-size: 0.85rem; color: var(--gray-2); line-height: 1.75; margin-bottom: 1.5rem; flex-grow: 1; }
-    .proj-stack {
-      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;
-    }
-    .tag {
-      font-family: var(--font-mono); font-size: 0.6rem;
-      letter-spacing: 0.06em; padding: 0.2rem 0.55rem;
-      background: var(--bg); border: 1px solid var(--border);
-      color: var(--gray-1);
-    }
-    .proj-links { display: flex; gap: 1rem; }
-    .proj-link {
-      font-family: var(--font-mono); font-size: 0.65rem;
-      letter-spacing: 0.08em; color: var(--white);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 0.4rem 0.8rem; 
-      box-shadow: 2px 2px 0px var(--border);
-      transition: all 0.1s;
-    }
-    .proj-link:hover { border-color: var(--cyan); color: var(--cyan); box-shadow: 2px 2px 0px var(--cyan); }
-    .proj-link:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px transparent; }
+        <div class="mt-10 grid gap-5 lg:grid-cols-2">
+          <article class="panel p-6 md:p-7">
+            <p class="meta-label">Workflow Compiler</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">Tensorify.io</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              Visual workflow compiler that turns node graphs into Python pipelines, backed by isolated execution on
+              dedicated compute using Linux sandboxing primitives.
+            </p>
+            <p class="mt-5 tag-row">Python · Redis Streams · BullMQ · Kubernetes · TypeScript</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a class="chip-link" href="https://tensorify.io" target="_blank" rel="noreferrer">Live</a>
+              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
 
-    @media (max-width: 640px) { #projects .grid { grid-template-columns: 1fr; } }
+          <article class="panel p-6 md:p-7">
+            <p class="meta-label">Distributed Infra</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">Flexx.dev</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              Redis-as-a-Service platform with automated provisioning and customer isolation, using a custom Go agent for
+              build and deployment orchestration.
+            </p>
+            <p class="mt-5 tag-row">Go · Docker · Redis · PostgreSQL · CI/CD</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
 
-    /* ─── RESEARCH ──────────────────────────────────────────────── */
-    #research { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    #research .inner { max-width: 900px; margin: 0 auto; }
-    .pub-list { margin-top: 3.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
-    .pub-card {
-      padding: 1.75rem 2rem;
-      display: grid; grid-template-columns: auto 1fr;
-      gap: 1.5rem; align-items: start;
-    }
-    .pub-badge {
-      font-family: var(--font-mono); font-size: 0.58rem;
-      letter-spacing: 0.08em; padding: 0.3rem 0.6rem;
-      white-space: nowrap; align-self: start;
-      border-radius: 0; box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
-    }
-    .badge-q1 { background: var(--amber-dim); border: 1px solid rgba(245,200,66,0.5); color: var(--amber); box-shadow: 2px 2px 0px rgba(245,200,66,0.3); }
-    .badge-pr { background: var(--cyan-dim);  border: 1px solid var(--border-hi);       color: var(--cyan); box-shadow: 2px 2px 0px rgba(0,240,255,0.3); }
-    .pub-year {
-      font-family: var(--font-mono); font-size: 0.6rem;
-      color: var(--gray-3); letter-spacing: 0.08em; margin-bottom: 0.4rem;
-    }
-    .pub-title {
-      font-family: var(--font-serif); font-size: 1.2rem;
-      font-weight: 400; color: var(--white);
-      line-height: 1.4; margin-bottom: 0.4rem;
-    }
-    .pub-venue { font-size: 0.8rem; color: var(--cyan); margin-bottom: 0.6rem; }
-    .pub-authors { font-size: 0.78rem; color: var(--gray-3); font-style: italic; margin-bottom: 0.75rem; }
-    .pub-authors strong { color: var(--gray-1); font-style: normal; font-weight: 500; }
-    
-    .pub-link {
-      font-family: var(--font-mono); font-size: 0.62rem;
-      letter-spacing: 0.08em; color: var(--white);
-      border: 1px solid var(--border); background: var(--bg);
-      padding: 0.3rem 0.8rem; box-shadow: 2px 2px 0px var(--border);
-      transition: all 0.1s;
-      display: inline-block;
-    }
-    .pub-link:hover { border-color: var(--cyan); color: var(--cyan); box-shadow: 2px 2px 0px var(--cyan); }
-    .pub-link:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px transparent; }
+          <article class="panel p-6 md:p-7">
+            <p class="meta-label">Autonomous Agent</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">Reactor</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              Tool-using ReAct agent built with LangGraph for shell, file, web, and API workflows, designed around
+              parallel execution and multi-agent coordination.
+            </p>
+            <p class="mt-5 tag-row">Python · LangGraph · LangChain · ReAct</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
 
-    .research-footer {
-      margin-top: 3rem; text-align: center;
-      font-family: var(--font-mono); font-size: 0.75rem;
-      color: var(--gray-3);
-    }
-    .research-footer a { color: var(--cyan); border-bottom: 1px solid var(--cyan); padding-bottom: 2px; }
+          <article class="panel p-6 md:p-7">
+            <p class="meta-label">Open Source</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">@xyph3r Suite</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              A set of Node.js engineering primitives covering reliability and workflow patterns like rate limiting,
+              idempotency, saga orchestration, and circuit breaking.
+            </p>
+            <p class="mt-5 tag-row">TypeScript · Node.js · npm · Open Source</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    @media (max-width: 640px) { .pub-card { grid-template-columns: 1fr; gap: 1rem; } }
+    <section id="research" class="section-block border-y border-slate-900/80 bg-slate-950/60">
+      <div class="shell">
+        <div class="max-w-3xl space-y-4">
+          <p class="eyebrow">Research</p>
+          <h2 class="section-title">Peer-reviewed <span>publications</span></h2>
+        </div>
 
-    /* ─── SKILLS ────────────────────────────────────────────────── */
-    #skills { padding: 6rem 0; }
-    .skills-band {
-      border: 1px solid var(--border);
-      background: var(--bg-panel);
-      box-shadow: var(--shadow-sm);
-    }
-    .skill-row {
-      display: grid; grid-template-columns: 9rem 1fr;
-      padding: 1.2rem 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .skill-row:last-child { border-bottom: none; }
-    .skill-cat {
-      font-family: var(--font-mono); font-size: 0.6rem;
-      letter-spacing: 0.12em; color: var(--white);
-      text-transform: uppercase; align-self: center;
-      background: var(--bg); border: 1px solid var(--border);
-      padding: 0.3rem 0.6rem; text-align: center;
-      box-shadow: 1px 1px 0px var(--cyan);
-    }
-    .skill-items {
-      font-family: var(--font-mono); font-size: 0.72rem;
-      color: var(--gray-2); letter-spacing: 0.04em; align-self: center;
-    }
-    .skill-items span { color: var(--border); margin: 0 0.6rem; }
+        <div class="mt-10 grid gap-4">
+          <article class="panel p-6 md:p-7">
+            <p class="meta-label">2025 · Q1 Journal</p>
+            <h3 class="mt-4 font-serif text-3xl text-white">
+              Application of 3D neural networks and explainable AI to classify ICDAS detection system on mandibular molars
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-slate-300">The Journal of Prosthetic Dentistry, 133(5), 1333-1341.</p>
+          </article>
 
-    @media (max-width: 640px) {
-      .skill-row { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
-      .skill-cat { align-self: flex-start; }
-    }
+          <article class="panel p-6 md:p-7">
+            <p class="meta-label">2025 · Q1 Journal</p>
+            <h3 class="mt-4 font-serif text-3xl text-white">
+              Unsupervised tooth segmentation from three dimensional scans of the dental arch using domain adaptation of synthetic data
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-slate-300">International Journal of Medical Informatics, 195, 105769.</p>
+          </article>
 
-    /* ─── CONTACT ───────────────────────────────────────────────── */
-    #contact { text-align: center; padding-bottom: 8rem; }
-    .contact-card {
-      max-width: 640px; margin: 3.5rem auto 0;
-      padding: 4rem 2.5rem;
-    }
-    .contact-email {
-      font-family: var(--font-serif); font-size: clamp(1.5rem, 4vw, 2.5rem);
-      font-weight: 300; color: var(--cyan);
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.25rem; display: inline-block; margin-bottom: 3rem;
-      transition: color 0.1s, border-color 0.1s;
-    }
-    .contact-email:hover { color: var(--white); border-color: var(--cyan); }
-    .contact-links {
-      display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
-    }
-    .contact-link {
-      font-family: var(--font-mono); font-size: 0.68rem;
-      letter-spacing: 0.1em; color: var(--gray-1);
-      text-transform: uppercase; 
-      border: 1px solid var(--border); background: var(--bg);
-      padding: 0.75rem 1.25rem;
-      box-shadow: 2px 2px 0px var(--border);
-      transition: all 0.1s;
-    }
-    .contact-link:hover { border-color: var(--cyan); box-shadow: 2px 2px 0px var(--cyan); color: var(--cyan); }
-    .contact-link:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px transparent; }
+          <article class="panel p-6 md:p-7">
+            <p class="meta-label">2024 · Peer-reviewed</p>
+            <h3 class="mt-4 font-serif text-3xl text-white">
+              An application of 3D vision transformers and explainable AI in prosthetic dentistry
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-slate-300">Applied AI Letters, 5(4), e101.</p>
+          </article>
 
-    /* ─── FOOTER ────────────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-      background: var(--bg-2);
-    }
-    footer .mono { font
+          <article class="panel p-6 md:p-7">
+            <p class="meta-label">2024 · Peer-reviewed</p>
+            <h3 class="mt-4 font-serif text-3xl text-white">
+              Dental Loop Chatbot: A prototype large language model framework for dentistry
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-slate-300">Software, 3(4), 587-594.</p>
+          </article>
+        </div>
+
+        <p class="mt-6 text-sm leading-7 text-slate-400">
+          Full paper links and complete citation details are included in the CV for now.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section-block">
+      <div class="shell">
+        <div class="panel mx-auto max-w-3xl p-8 text-center md:p-10">
+          <p class="eyebrow">Contact</p>
+          <h2 class="mt-4 font-serif text-5xl leading-none text-white md:text-7xl">
+            Open to <span class="text-slate-500">serious work</span>
+          </h2>
+          <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300">
+            If you are building infrastructure-heavy software, research tooling, or applied AI systems, send context and
+            a concrete problem statement.
+          </p>
+          <a class="mt-8 inline-block font-serif text-3xl text-cyan-300 transition hover:text-white md:text-4xl" href="mailto:faisalahmed531@gmail.com">
+            faisalahmed531@gmail.com
+          </a>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="chip-link" href="https://linkedin.com/in/faisalahmedsifat" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="chip-link" href="./public/faisal-ahmed-sifat-cv.pdf" download>Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-900/80 py-6">
+    <div class="shell flex flex-col gap-2 text-xs uppercase tracking-[0.16em] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; 2026 Faisal Ahmed Sifat</p>
+      <p>Static HTML · Tailwind CLI</p>
+    </div>
+  </footer>
+</body>
+</html>
