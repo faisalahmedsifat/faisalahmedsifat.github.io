@@ -108,16 +108,17 @@
                 <p class="case-study-label">Problem</p>
                 <p>Teams need a way to compose AI workflows visually without giving up execution discipline or deployment realism.</p>
                 <p class="case-study-label">What I built</p>
-                <p>A visual node graph compiler that transpiles workflows into Python pipelines, backed by dedicated execution infrastructure.</p>
+                <p>A custom scripting language and compiler that transpiles visual workflows into Python, running in sandboxed Kubernetes pods with gVisor isolation.</p>
                 <p class="case-study-label">How it works</p>
-                <p>Workloads are isolated using Linux sandboxing primitives (`unshare`, `prlimit`). Execution is production-oriented orchestration, not notebook-style run-and-pray.</p>
+                <p>Workflows are defined in a custom DSL, compiled to Python, and executed on k3s clusters with gVisor-sandboxed containers for multi-tenant workload isolation.</p>
               </div>
             </div>
             <div class="mt-6 flex flex-wrap gap-3">
               <span class="stack-pill">Python</span>
               <span class="stack-pill">TypeScript</span>
-              <span class="stack-pill">Sandboxed Execution</span>
-              <span class="stack-pill">Workflow Orchestration</span>
+              <span class="stack-pill">k3s</span>
+              <span class="stack-pill">gVisor</span>
+              <span class="stack-pill">Custom DSL</span>
               <a class="chip-link" href="https://tensorify.io" target="_blank" rel="noreferrer">Live</a>
             </div>
           </article>
@@ -134,14 +135,14 @@
                 <p class="case-study-label">What I built</p>
                 <p>A distributed execution engine using Redis Streams, BullMQ, and Kubernetes to coordinate parallel tasks and isolated workload runs.</p>
                 <p class="case-study-label">How it works</p>
-                <p>Event-driven coordination with CQRS-like service boundaries — dispatch, execution, and recovery paths evolve independently.</p>
+                <p>Event-driven coordination with clear service boundaries — dispatch, execution, and recovery paths evolve independently.</p>
               </div>
             </div>
             <div class="mt-6 flex flex-wrap gap-3">
               <span class="stack-pill">Redis Streams</span>
               <span class="stack-pill">BullMQ</span>
               <span class="stack-pill">Kubernetes</span>
-              <span class="stack-pill">CQRS</span>
+              <span class="stack-pill">Event-Driven</span>
             </div>
           </article>
 
