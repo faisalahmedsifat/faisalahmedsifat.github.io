@@ -3,11 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faisal Ahmed Sifat | Distributed Systems and ML Research</title>
   <meta
     name="description"
-    content="Faisal Ahmed Sifat is a software engineer and applied ML researcher focused on distributed systems, infrastructure, and peer-reviewed research."
+    content="Faisal Ahmed Sifat — software engineer and ML researcher. Building distributed systems, workflow infrastructure, and open-source tooling."
   />
-  <title>Faisal Ahmed Sifat</title>
+  <link rel="canonical" href="https://faisalahmedsifat.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Faisal Ahmed Sifat" />
+  <meta property="og:title" content="Faisal Ahmed Sifat | Distributed Systems and ML Research" />
+  <meta
+    property="og:description"
+    content="Software engineer and ML researcher building distributed systems, workflow infrastructure, and open-source tooling."
+  />
+  <meta property="og:url" content="https://faisalahmedsifat.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Faisal Ahmed Sifat | Distributed Systems and ML Research" />
+  <meta
+    name="twitter:description"
+    content="Software engineer and ML researcher building distributed systems, workflow infrastructure, and open-source tooling."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -15,20 +30,50 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="./style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Faisal Ahmed Sifat",
+      "url": "https://faisalahmedsifat.github.io/",
+      "email": "mailto:faisalahmed531@gmail.com",
+      "jobTitle": "Software Engineer and AI/ML Researcher",
+      "sameAs": [
+        "https://github.com/faisalahmedsifat",
+        "https://linkedin.com/in/faisalahmedsifat"
+      ],
+      "knowsAbout": [
+        "Distributed Systems",
+        "Machine Learning Systems",
+        "Federated Learning",
+        "Edge Computing",
+        "Workflow Orchestration",
+        "AI Infrastructure"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "North South University"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dhaka",
+        "addressCountry": "Bangladesh"
+      }
+    }
+  </script>
 </head>
 <body class="page-shell">
   <div class="pointer-events-none fixed inset-x-0 top-0 z-40 h-px bg-cyan-300/70 shadow-[0_0_18px_rgba(34,211,238,0.55)]"></div>
 
-  <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
+  <header class="site-header">
     <div class="shell flex items-center justify-between gap-3 py-4">
-      <a href="#top" class="font-serif text-2xl font-semibold tracking-tight text-white">FAS.</a>
+      <a href="./index.html" class="font-serif text-2xl font-semibold tracking-tight text-white">FAS.</a>
 
       <nav class="hidden items-center gap-6 md:flex">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#research">Research</a>
-        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link nav-link-current" href="./index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="./research.html">Research</a>
+        <a class="nav-link" href="./systems.html">Systems</a>
+        <a class="nav-link" href="./contact.html">CV / Contact</a>
       </nav>
 
       <div class="hidden md:block">
@@ -38,11 +83,10 @@
       <details class="mobile-nav md:hidden" data-mobile-nav>
         <summary class="button-secondary cursor-pointer list-none">Menu</summary>
         <nav class="mobile-nav-panel panel">
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#experience">Experience</a>
-          <a class="nav-link" href="#projects">Projects</a>
-          <a class="nav-link" href="#research">Research</a>
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link nav-link-current" href="./index.html" aria-current="page">Home</a>
+          <a class="nav-link" href="./research.html">Research</a>
+          <a class="nav-link" href="./systems.html">Systems</a>
+          <a class="nav-link" href="./contact.html">CV / Contact</a>
           <a class="button-secondary justify-center" href="./public/faisal-ahmed-sifat-cv.pdf" download>Download CV</a>
         </nav>
       </details>
@@ -51,370 +95,151 @@
 
   <main id="top">
     <section class="hero-grid border-b border-slate-900/80">
-      <div class="shell grid gap-8 py-16 sm:py-20 md:py-24 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.82fr)] lg:items-end lg:gap-10">
+      <div class="shell grid gap-8 py-16 sm:py-20 md:py-24 lg:grid-cols-[minmax(0,1.3fr)_minmax(18rem,0.78fr)] lg:items-end lg:gap-10">
         <div class="space-y-7 md:space-y-8">
-          <p class="eyebrow reveal" data-reveal>&gt; tactical_profile.init :: Distributed Systems · Applied ML Research</p>
-
           <div class="space-y-4 md:space-y-5">
             <h1 class="font-serif text-5xl leading-none tracking-tight text-white sm:text-7xl md:text-8xl">
               Faisal
               <span class="hero-glitch block text-slate-500" data-scramble="Ahmed Sifat">Ahmed Sifat</span>
             </h1>
-            <p class="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 reveal delay-1" data-reveal>
-              Software engineer and researcher working where resilient infrastructure and machine learning meet.
-              I build production systems, publish peer-reviewed work, and care more about signal than presentation noise.
+            <p class="max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 reveal delay-1" data-reveal>
+              I build distributed systems and ML infrastructure. Currently engineering at All Generation Tech,
+              shipping Tensorify, and applying for graduate research in networked ML.
             </p>
           </div>
 
           <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 reveal delay-2" data-reveal>
-            <a class="button-primary" href="#projects">Selected Work</a>
-            <a class="button-secondary" href="#research">Research</a>
+            <a class="button-primary" href="./systems.html">View Projects</a>
+            <a class="button-secondary" href="./research.html">Research</a>
           </div>
-
-          <ul class="grid gap-3 text-sm text-slate-400 sm:grid-cols-3 reveal delay-3" data-reveal>
-            <li class="panel tactical-panel p-4">
-              <p class="eyebrow">Publications</p>
-              <p class="mt-3 font-serif text-3xl text-white">4</p>
-            </li>
-            <li class="panel tactical-panel p-4">
-              <p class="eyebrow">Focus</p>
-              <p class="mt-3 font-medium text-white">Systems, ML, infra</p>
-            </li>
-            <li class="panel tactical-panel p-4">
-              <p class="eyebrow">Base</p>
-              <p class="mt-3 font-medium text-white">Dhaka, Bangladesh</p>
-            </li>
-          </ul>
         </div>
 
-        <aside class="panel terminal-frame reveal delay-2 p-5 sm:p-6 md:p-8" data-reveal>
+        <aside class="panel terminal-frame reveal delay-1 p-5 sm:p-6 md:p-8" data-reveal>
           <div class="terminal-topbar">
             <span class="status-dot"></span>
             <span class="status-dot"></span>
             <span class="status-dot"></span>
-            <p class="ml-auto font-mono text-[0.62rem] uppercase tracking-[0.22em] text-slate-500">Live Context</p>
+            <p class="ml-auto font-mono text-[0.62rem] uppercase tracking-[0.22em] text-slate-500">Now</p>
           </div>
-          <p class="eyebrow mt-5">Current Snapshot</p>
-          <div class="mt-5 space-y-5 md:space-y-6">
-            <div>
-              <p class="meta-label">Now</p>
-              <p class="mt-2 text-base leading-7 text-slate-300">
-                Building workflow systems and enterprise software while continuing applied ML and medical AI research.
-              </p>
-            </div>
-            <div>
-              <p class="meta-label">Interests</p>
-              <p class="mt-2 text-base leading-7 text-slate-300">
-                Fault-tolerant execution, sandboxed compute, event-driven systems, 3D vision, and production AI tooling.
-              </p>
-            </div>
-            <div>
-              <p class="meta-label">Links</p>
-              <div class="mt-3 flex flex-wrap gap-3">
-                <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
-                <a class="chip-link" href="https://linkedin.com/in/faisalahmedsifat" target="_blank" rel="noreferrer">LinkedIn</a>
-                <a class="chip-link" href="mailto:faisalahmed531@gmail.com">Email</a>
-              </div>
-            </div>
+          <div class="mt-5 space-y-5">
             <div class="terminal-log">
-              <p><span>status</span> production systems shipping</p>
-              <p><span>mode</span> research-backed engineering</p>
-              <p><span>signal</span> clean infra, not noise</p>
+              <p><span>building</span> Tensorify workflow compiler</p>
+              <p><span>shipping</span> @xyph3r infra primitives</p>
+              <p><span>research</span> 4 published papers</p>
+              <p><span>next</span> grad school in distributed ML</p>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="about" class="section-block">
-      <div class="shell grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <div class="space-y-4 reveal" data-reveal>
-          <p class="eyebrow">About</p>
-          <h2 class="section-title max-w-md">Engineering with <span>research discipline</span></h2>
-        </div>
-
-        <div class="space-y-6 text-base leading-8 text-slate-300 reveal delay-1" data-reveal>
-          <p>
-            My work sits at the boundary between distributed systems and machine learning. I care about the systems
-            problems that appear when you try to make ML practical: isolation, orchestration, reliability, and cost.
-          </p>
-          <p>
-            I have built workflow engines, event-driven services, and deployment tooling for multi-tenant products. In
-            parallel, I have published peer-reviewed work on 3D computer vision, prosthetic dentistry, and clinical AI.
-          </p>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="panel tactical-panel p-5">
-              <p class="meta-label">What I build</p>
-              <p class="mt-3 text-sm leading-7 text-slate-300">
-                Execution engines, orchestration backends, internal tooling, and infrastructure-heavy product systems.
-              </p>
-            </div>
-            <div class="panel tactical-panel p-5">
-              <p class="meta-label">What I study</p>
-              <p class="mt-3 text-sm leading-7 text-slate-300">
-                Applied ML systems, 3D data pipelines, explainable AI, and constraints at the network edge.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section-block border-y border-slate-900/80 bg-slate-950/60">
+    <section class="section-block">
       <div class="shell">
-        <div class="max-w-3xl space-y-4 reveal" data-reveal>
-          <p class="eyebrow">Experience</p>
-          <h2 class="section-title">Recent <span>work</span></h2>
+        <div class="flex max-w-3xl flex-col gap-4 reveal" data-reveal>
+          <p class="eyebrow">Featured Work</p>
+          <h2 class="section-title">Things I've <span>built</span></h2>
         </div>
 
-        <div class="mt-10 grid gap-5">
-          <article class="panel tactical-panel reveal grid gap-6 p-5 sm:p-6 md:grid-cols-[14rem_minmax(0,1fr)] md:p-7" data-reveal>
-            <div>
-              <p class="font-serif text-2xl text-white sm:text-3xl">Software Engineer</p>
-              <p class="mt-2 text-sm text-slate-400">All Generation Tech</p>
-              <p class="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">Feb 2026 — Present</p>
-            </div>
-            <p class="text-sm leading-7 text-slate-300">
-              Building enterprise dashboards and workflow systems for US-based clients across backend APIs, data design,
-              and frontend integration.
-            </p>
-          </article>
-
-          <article class="panel tactical-panel reveal delay-1 grid gap-6 p-5 sm:p-6 md:grid-cols-[14rem_minmax(0,1fr)] md:p-7" data-reveal>
-            <div>
-              <p class="font-serif text-2xl text-white sm:text-3xl">Founder &amp; Technical Lead</p>
-              <p class="mt-2 text-sm text-slate-400">AlphaWolf Ventures</p>
-              <p class="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">Mar 2024 — Present</p>
-            </div>
-            <p class="text-sm leading-7 text-slate-300">
-              Architected distributed workflow execution, AI workload isolation, and CQRS-style service boundaries for
-              products including Tensorify.io, Flexx.dev, and Jomidaar.
-            </p>
-          </article>
-
-          <article class="panel tactical-panel reveal delay-2 grid gap-6 p-5 sm:p-6 md:grid-cols-[14rem_minmax(0,1fr)] md:p-7" data-reveal>
-            <div>
-              <p class="font-serif text-2xl text-white sm:text-3xl">AI/ML Researcher</p>
-              <p class="mt-2 text-sm text-slate-400">NSU × University of Adelaide</p>
-              <p class="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">Jul 2024 — Jan 2025</p>
-            </div>
-            <p class="text-sm leading-7 text-slate-300">
-              Worked on PointNet++ domain adaptation, vision transformer pipelines, and clinical decision-support
-              systems, contributing to four peer-reviewed publications.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section-block">
-      <div class="shell">
-        <div class="max-w-3xl space-y-4 reveal" data-reveal>
-          <p class="eyebrow">Projects</p>
-          <h2 class="section-title">Selected <span>work</span></h2>
-        </div>
-
-        <div class="mt-10 grid gap-5 lg:grid-cols-2">
-          <article class="panel tactical-panel reveal p-5 sm:p-6 md:p-7" data-reveal>
-            <p class="meta-label">Workflow Compiler</p>
-            <h3 class="mt-4 font-serif text-3xl text-white sm:text-4xl">Tensorify.io</h3>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          <article class="panel audience-card reveal p-6 md:p-7" data-reveal>
+            <p class="meta-label">Product</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">Tensorify</h3>
             <p class="mt-4 text-sm leading-7 text-slate-300">
-              Visual workflow compiler that turns node graphs into Python pipelines, backed by isolated execution on
-              dedicated compute using Linux sandboxing primitives.
+              A visual workflow compiler for AI pipelines with sandboxed execution infrastructure. Drag, connect, deploy.
             </p>
-            <p class="mt-5 tag-row">Python · Redis Streams · BullMQ · Kubernetes · TypeScript</p>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a class="chip-link" href="https://tensorify.io" target="_blank" rel="noreferrer">Live</a>
-              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">TypeScript</span>
             </div>
+            <a class="button-secondary mt-6" href="./systems.html">Details</a>
           </article>
 
-          <article class="panel tactical-panel reveal delay-1 p-5 sm:p-6 md:p-7" data-reveal>
-            <p class="meta-label">Distributed Infra</p>
-            <h3 class="mt-4 font-serif text-3xl text-white sm:text-4xl">Flexx.dev</h3>
+          <article class="panel audience-card reveal delay-1 p-6 md:p-7" data-reveal>
+            <p class="meta-label">Infrastructure</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">Workflow Engine</h3>
             <p class="mt-4 text-sm leading-7 text-slate-300">
-              Redis-as-a-Service platform with automated provisioning and customer isolation, using a custom Go agent for
-              build and deployment orchestration.
+              Fault-tolerant distributed execution layer using Redis Streams, BullMQ, and Kubernetes for multi-tenant AI workloads.
             </p>
-            <p class="mt-5 tag-row">Go · Docker · Redis · PostgreSQL · CI/CD</p>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="stack-pill">Redis</span>
+              <span class="stack-pill">K8s</span>
             </div>
+            <a class="button-secondary mt-6" href="./systems.html">Details</a>
           </article>
 
-          <article class="panel tactical-panel reveal delay-2 p-5 sm:p-6 md:p-7" data-reveal>
-            <p class="meta-label">Autonomous Agent</p>
-            <h3 class="mt-4 font-serif text-3xl text-white sm:text-4xl">Reactor</h3>
-            <p class="mt-4 text-sm leading-7 text-slate-300">
-              Tool-using ReAct agent built with LangGraph for shell, file, web, and API workflows, designed around
-              parallel execution and multi-agent coordination.
-            </p>
-            <p class="mt-5 tag-row">Python · LangGraph · LangChain · ReAct</p>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="panel tactical-panel reveal delay-3 p-5 sm:p-6 md:p-7" data-reveal>
+          <article class="panel audience-card reveal delay-2 p-6 md:p-7" data-reveal>
             <p class="meta-label">Open Source</p>
-            <h3 class="mt-4 font-serif text-3xl text-white sm:text-4xl">@xyph3r Suite</h3>
+            <h3 class="mt-4 font-serif text-4xl text-white">@xyph3r</h3>
             <p class="mt-4 text-sm leading-7 text-slate-300">
-              A set of Node.js engineering primitives covering reliability and workflow patterns like rate limiting,
-              idempotency, saga orchestration, and circuit breaking.
+              Infrastructure primitives for Node.js — rate limiting, circuit breaking, idempotency, sagas — the reliability patterns teams keep rebuilding.
             </p>
-            <p class="mt-5 tag-row">TypeScript · Node.js · npm · Open Source</p>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="stack-pill">TypeScript</span>
+              <span class="stack-pill">Node.js</span>
             </div>
+            <a class="button-secondary mt-6" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="research" class="section-block border-y border-slate-900/80 bg-slate-950/60">
+    <section class="section-block border-y border-slate-900/80 bg-slate-950/60">
       <div class="shell">
-        <div class="max-w-3xl space-y-4 reveal" data-reveal>
-          <p class="eyebrow">Research</p>
-          <h2 class="section-title">Peer-reviewed <span>publications</span></h2>
-        </div>
-
-        <div class="mt-10 grid gap-4">
-          <article class="panel tactical-panel reveal p-5 sm:p-6 md:p-7" data-reveal>
-            <p class="meta-label">2025 · Q1 Journal</p>
-            <h3 class="mt-4 font-serif text-2xl leading-tight text-white sm:text-3xl">
-              Application of 3D neural networks and explainable AI to classify ICDAS detection system on mandibular molars
-            </h3>
-            <p class="mt-3 text-sm leading-7 text-slate-300">The Journal of Prosthetic Dentistry, 133(5), 1333-1341.</p>
+        <div class="proof-grid">
+          <article class="panel tactical-panel reveal p-5" data-reveal>
+            <p class="eyebrow">Publications</p>
+            <p class="mt-3 font-serif text-4xl text-white">4</p>
+            <p class="mt-3 text-sm leading-7 text-slate-300">Peer-reviewed papers in medical AI, 3D vision, and domain-specific systems.</p>
           </article>
-
-          <article class="panel tactical-panel reveal delay-1 p-5 sm:p-6 md:p-7" data-reveal>
-            <p class="meta-label">2025 · Q1 Journal</p>
-            <h3 class="mt-4 font-serif text-2xl leading-tight text-white sm:text-3xl">
-              Unsupervised tooth segmentation from three dimensional scans of the dental arch using domain adaptation of synthetic data
-            </h3>
-            <p class="mt-3 text-sm leading-7 text-slate-300">International Journal of Medical Informatics, 195, 105769.</p>
+          <article class="panel tactical-panel reveal delay-1 p-5" data-reveal>
+            <p class="eyebrow">Company</p>
+            <p class="mt-3 font-serif text-4xl text-white">AlphaWolf</p>
+            <p class="mt-3 text-sm leading-7 text-slate-300">Founded and built products around workflow orchestration and AI tooling.</p>
           </article>
-
-          <article class="panel tactical-panel reveal delay-2 p-5 sm:p-6 md:p-7" data-reveal>
-            <p class="meta-label">2024 · Peer-reviewed</p>
-            <h3 class="mt-4 font-serif text-2xl leading-tight text-white sm:text-3xl">
-              An application of 3D vision transformers and explainable AI in prosthetic dentistry
-            </h3>
-            <p class="mt-3 text-sm leading-7 text-slate-300">Applied AI Letters, 5(4), e101.</p>
+          <article class="panel tactical-panel reveal delay-2 p-5" data-reveal>
+            <p class="eyebrow">Focus</p>
+            <p class="mt-3 font-serif text-4xl text-white">Distributed ML</p>
+            <p class="mt-3 text-sm leading-7 text-slate-300">Systems work grounded in real ML workloads — scheduling, isolation, coordination.</p>
           </article>
-
-          <article class="panel tactical-panel reveal delay-3 p-5 sm:p-6 md:p-7" data-reveal>
-            <p class="meta-label">2024 · Peer-reviewed</p>
-            <h3 class="mt-4 font-serif text-2xl leading-tight text-white sm:text-3xl">
-              Dental Loop Chatbot: A prototype large language model framework for dentistry
-            </h3>
-            <p class="mt-3 text-sm leading-7 text-slate-300">Software, 3(4), 587-594.</p>
+          <article class="panel tactical-panel reveal delay-3 p-5" data-reveal>
+            <p class="eyebrow">Stack</p>
+            <p class="mt-3 font-serif text-4xl text-white">Full Infra</p>
+            <p class="mt-3 text-sm leading-7 text-slate-300">Python, Go, TypeScript, Redis, PostgreSQL, Docker, Kubernetes, Linux.</p>
           </article>
         </div>
-
-        <p class="mt-6 text-sm leading-7 text-slate-400 reveal delay-2" data-reveal>
-          Full paper links and complete citation details are included in the CV for now.
-        </p>
       </div>
     </section>
 
-    <section id="contact" class="section-block">
+    <section class="section-block">
       <div class="shell">
-        <div class="panel terminal-frame reveal mx-auto max-w-3xl p-6 text-center sm:p-8 md:p-10" data-reveal>
-          <p class="eyebrow">Contact</p>
-          <h2 class="mt-4 font-serif text-4xl leading-none text-white sm:text-5xl md:text-7xl">
-            Open to <span class="text-slate-500">serious work</span>
-          </h2>
-          <p class="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-300 md:leading-8">
-            If you are building infrastructure-heavy software, research tooling, or applied AI systems, send context and
-            a concrete problem statement.
+        <div class="mx-auto max-w-3xl space-y-5 reveal" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">A bit about <span>me</span></h2>
+          <p class="body-copy">
+            I'm a software engineer and researcher based in Dhaka. I build infrastructure that runs ML workloads reliably —
+            workflow engines, execution sandboxes, coordination layers. On the research side, I've published four papers in
+            medical AI and 3D vision through a collaboration between North South University and the University of Adelaide.
           </p>
-          <a class="mt-8 inline-block break-all font-serif text-2xl text-cyan-300 transition hover:text-white sm:text-3xl md:text-4xl" href="mailto:faisalahmed531@gmail.com">
-            faisalahmed531@gmail.com
-          </a>
-          <div class="mt-8 flex flex-wrap justify-center gap-3">
-            <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="chip-link" href="https://linkedin.com/in/faisalahmedsifat" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="chip-link" href="./public/faisal-ahmed-sifat-cv.pdf" download>Download CV</a>
+          <p class="body-copy">
+            Right now I'm building enterprise workflow systems at All Generation Tech, running Tensorify (my startup),
+            shipping open-source infra tooling, and applying to graduate programs in distributed ML.
+          </p>
+          <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+            <a class="button-secondary" href="./contact.html">Get in Touch</a>
+            <a class="button-secondary" href="./public/faisal-ahmed-sifat-cv.pdf" download>Download CV</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-slate-900/80 py-6">
+  <footer class="site-footer">
     <div class="shell flex flex-col gap-2 text-xs uppercase tracking-[0.16em] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
       <p>&copy; 2026 Faisal Ahmed Sifat</p>
       <p>Static HTML · Tailwind CLI</p>
     </div>
   </footer>
 
-  <script>
-    const mobileNav = document.querySelector("[data-mobile-nav]");
-    if (mobileNav) {
-      mobileNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileNav.removeAttribute("open");
-        });
-      });
-    }
-
-    const revealItems = document.querySelectorAll("[data-reveal]");
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (prefersReducedMotion) {
-      revealItems.forEach((item) => item.classList.add("reveal-visible"));
-    } else if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add("reveal-visible");
-            observer.unobserve(entry.target);
-          });
-        },
-        { threshold: 0.08, rootMargin: "0px 0px -8% 0px" }
-      );
-
-      revealItems.forEach((item) => observer.observe(item));
-    } else {
-      revealItems.forEach((item) => item.classList.add("reveal-visible"));
-    }
-
-    const scrambleAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const scrambleTargets = document.querySelectorAll("[data-scramble]");
-
-    scrambleTargets.forEach((target) => {
-      const finalText = target.dataset.scramble || target.textContent.trim();
-      let running = false;
-
-      const animate = () => {
-        if (running || prefersReducedMotion) return;
-        running = true;
-        let frame = 0;
-
-        const timer = window.setInterval(() => {
-          target.textContent = finalText
-            .split("")
-            .map((char, index) => {
-              if (char === " ") return " ";
-              return index < frame ? finalText[index] : scrambleAlphabet[Math.floor(Math.random() * scrambleAlphabet.length)];
-            })
-            .join("");
-
-          frame += 1 / 2;
-
-          if (frame >= finalText.length + 1) {
-            window.clearInterval(timer);
-            target.textContent = finalText;
-            running = false;
-          }
-        }, 32);
-      };
-
-      target.addEventListener("mouseenter", animate);
-      target.addEventListener("focus", animate);
-    });
-  </script>
+  <script src="./app.js"></script>
 </body>
 </html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Systems | Faisal Ahmed Sifat</title>
+  <meta
+    name="description"
+    content="Systems case studies from Faisal Ahmed Sifat covering Tensorify, workflow execution infrastructure, @xyph3r open-source tooling, and prototype lab work."
+  />
+  <link rel="canonical" href="https://faisalahmedsifat.github.io/systems.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Faisal Ahmed Sifat" />
+  <meta property="og:title" content="Systems | Faisal Ahmed Sifat" />
+  <meta
+    property="og:description"
+    content="Systems case studies, architecture decisions, open-source infrastructure, and clear scope on prototype work."
+  />
+  <meta property="og:url" content="https://faisalahmedsifat.github.io/systems.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Systems | Faisal Ahmed Sifat" />
+  <meta
+    name="twitter:description"
+    content="Systems case studies, architecture decisions, open-source infrastructure, and clear scope on prototype work."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="page-shell">
+  <div class="pointer-events-none fixed inset-x-0 top-0 z-40 h-px bg-cyan-300/70 shadow-[0_0_18px_rgba(34,211,238,0.55)]"></div>
+
+  <header class="site-header">
+    <div class="shell flex items-center justify-between gap-3 py-4">
+      <a href="./index.html" class="font-serif text-2xl font-semibold tracking-tight text-white">FAS.</a>
+
+      <nav class="hidden items-center gap-6 md:flex">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link" href="./research.html">Research</a>
+        <a class="nav-link nav-link-current" href="./systems.html" aria-current="page">Systems</a>
+        <a class="nav-link" href="./contact.html">CV / Contact</a>
+      </nav>
+
+      <div class="hidden md:block">
+        <a class="button-secondary" href="./contact.html">Contact</a>
+      </div>
+
+      <details class="mobile-nav md:hidden" data-mobile-nav>
+        <summary class="button-secondary cursor-pointer list-none">Menu</summary>
+        <nav class="mobile-nav-panel panel">
+          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./research.html">Research</a>
+          <a class="nav-link nav-link-current" href="./systems.html" aria-current="page">Systems</a>
+          <a class="nav-link" href="./contact.html">CV / Contact</a>
+          <a class="button-secondary justify-center" href="./contact.html">Contact</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="shell grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:items-end">
+        <div class="space-y-5">
+          <p class="eyebrow reveal" data-reveal>Projects</p>
+          <h1 class="section-title reveal" data-reveal>Systems and <span>infrastructure</span></h1>
+          <p class="body-copy max-w-3xl reveal delay-1" data-reveal>
+            The production systems, open-source tools, and side projects I've built — workflow engines,
+            execution sandboxes, reliability primitives, and infrastructure experiments.
+          </p>
+        </div>
+
+        <aside class="panel terminal-frame reveal delay-1 p-5 sm:p-6" data-reveal>
+          <div class="terminal-topbar">
+            <span class="status-dot"></span>
+            <span class="status-dot"></span>
+            <span class="status-dot"></span>
+            <p class="ml-auto font-mono text-[0.62rem] uppercase tracking-[0.22em] text-slate-500">Stack</p>
+          </div>
+          <div class="mt-5 space-y-4 text-sm leading-7 text-slate-300">
+            <p>Python, Go, TypeScript</p>
+            <p>Redis, PostgreSQL, Docker, Kubernetes</p>
+            <p>Event-driven architecture, BullMQ</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="shell">
+        <div class="max-w-3xl space-y-4 reveal" data-reveal>
+          <p class="eyebrow">Core Case Studies</p>
+          <h2 class="section-title">Selected <span>systems work</span></h2>
+        </div>
+
+        <div class="mt-10 grid gap-5">
+          <article class="panel case-study reveal p-6 md:p-7" data-reveal>
+            <div class="case-study-split">
+              <div>
+                <p class="meta-label">Tensorify</p>
+                <h3 class="mt-4 font-serif text-4xl text-white">Visual workflow compiler for AI pipelines</h3>
+              </div>
+              <div class="case-study-copy">
+                <p class="case-study-label">Problem</p>
+                <p>Teams need a way to compose AI workflows visually without giving up execution discipline or deployment realism.</p>
+                <p class="case-study-label">What I built</p>
+                <p>A visual node graph compiler that transpiles workflows into Python pipelines, backed by dedicated execution infrastructure.</p>
+                <p class="case-study-label">How it works</p>
+                <p>Workloads are isolated using Linux sandboxing primitives (`unshare`, `prlimit`). Execution is production-oriented orchestration, not notebook-style run-and-pray.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">TypeScript</span>
+              <span class="stack-pill">Sandboxed Execution</span>
+              <span class="stack-pill">Workflow Orchestration</span>
+              <a class="chip-link" href="https://tensorify.io" target="_blank" rel="noreferrer">Live</a>
+            </div>
+          </article>
+
+          <article class="panel case-study reveal delay-1 p-6 md:p-7" data-reveal>
+            <div class="case-study-split">
+              <div>
+                <p class="meta-label">Workflow Engine</p>
+                <h3 class="mt-4 font-serif text-4xl text-white">Fault-tolerant execution and coordination layer</h3>
+              </div>
+              <div class="case-study-copy">
+                <p class="case-study-label">Problem</p>
+                <p>AI workloads need durable scheduling, worker coordination, and failure-aware execution when jobs span multiple nodes and tenants.</p>
+                <p class="case-study-label">What I built</p>
+                <p>A distributed execution engine using Redis Streams, BullMQ, and Kubernetes to coordinate parallel tasks and isolated workload runs.</p>
+                <p class="case-study-label">How it works</p>
+                <p>Event-driven coordination with CQRS-like service boundaries — dispatch, execution, and recovery paths evolve independently.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="stack-pill">Redis Streams</span>
+              <span class="stack-pill">BullMQ</span>
+              <span class="stack-pill">Kubernetes</span>
+              <span class="stack-pill">CQRS</span>
+            </div>
+          </article>
+
+          <article class="panel case-study reveal delay-2 p-6 md:p-7" data-reveal>
+            <div class="case-study-split">
+              <div>
+                <p class="meta-label">@xyph3r OSS Suite</p>
+                <h3 class="mt-4 font-serif text-4xl text-white">Infrastructure-oriented open-source primitives</h3>
+              </div>
+              <div class="case-study-copy">
+                <p class="case-study-label">Problem</p>
+                <p>Node.js teams keep rebuilding the same reliability primitives — rate limiters, circuit breakers, idempotency layers — from scratch every time.</p>
+                <p class="case-study-label">What I built</p>
+                <p>An open-source suite of composable infrastructure primitives: rate limiting, idempotency, saga orchestration, and circuit breaking.</p>
+                <p class="case-study-label">How it works</p>
+                <p>Each package is a standalone, reusable pattern with a clean API. Designed to compose into larger systems rather than being one-off utilities.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="stack-pill">TypeScript</span>
+              <span class="stack-pill">Node.js</span>
+              <span class="stack-pill">Open Source</span>
+              <a class="chip-link" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block border-y border-slate-900/80 bg-slate-950/60">
+      <div class="shell">
+        <div class="max-w-3xl space-y-4 reveal" data-reveal>
+          <p class="eyebrow">Side Projects</p>
+          <h2 class="section-title">Explorations and <span>experiments</span></h2>
+        </div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-2">
+          <article class="panel lab-card reveal p-6 md:p-7" data-reveal>
+            <p class="meta-label">Infrastructure</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">Flexx.dev</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              Redis-as-a-Service with automated provisioning and namespace isolation. Built a custom Go agent that handles build and deployment orchestration.
+            </p>
+          </article>
+          <article class="panel lab-card reveal delay-1 p-6 md:p-7" data-reveal>
+            <p class="meta-label">AI Agents</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">Reactor</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              LangGraph-based ReAct agent with file, shell, web, and API tools. Exploring tool-using autonomous workflows and multi-agent coordination.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="shell flex flex-col items-center gap-6 text-center reveal" data-reveal>
+        <p class="body-copy max-w-2xl">
+          Interested in the code? Most of my work is on GitHub. For collaboration or hiring conversations, reach out directly.
+        </p>
+        <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+          <a class="button-primary" href="https://github.com/faisalahmedsifat" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button-secondary" href="./contact.html">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell flex flex-col gap-2 text-xs uppercase tracking-[0.16em] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; 2026 Faisal Ahmed Sifat</p>
+      <p>Static HTML · Tailwind CLI</p>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
