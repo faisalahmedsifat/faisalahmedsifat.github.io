@@ -6,7 +6,7 @@
   <title>Systems | Faisal Ahmed Sifat</title>
   <meta
     name="description"
-    content="Systems case studies from Faisal Ahmed Sifat covering Tensorify, workflow execution infrastructure, @xyph3r open-source tooling, and prototype lab work."
+    content="Projects by Faisal Ahmed Sifat — Tensorify workflow compiler, distributed execution engine, @xyph3r open-source infrastructure, and side experiments."
   />
   <link rel="canonical" href="https://faisalahmedsifat.github.io/systems.html" />
   <meta property="og:type" content="website" />
@@ -14,14 +14,14 @@
   <meta property="og:title" content="Systems | Faisal Ahmed Sifat" />
   <meta
     property="og:description"
-    content="Systems case studies, architecture decisions, open-source infrastructure, and clear scope on prototype work."
+    content="Projects by Faisal Ahmed Sifat — workflow compilers, distributed execution, open-source infrastructure primitives, and infrastructure experiments."
   />
   <meta property="og:url" content="https://faisalahmedsifat.github.io/systems.html" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Systems | Faisal Ahmed Sifat" />
   <meta
     name="twitter:description"
-    content="Systems case studies, architecture decisions, open-source infrastructure, and clear scope on prototype work."
+    content="Projects by Faisal Ahmed Sifat — workflow compilers, distributed execution, open-source infrastructure primitives, and infrastructure experiments."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -102,23 +102,24 @@
             <div class="case-study-split">
               <div>
                 <p class="meta-label">Tensorify</p>
-                <h3 class="mt-4 font-serif text-4xl text-white">Visual workflow compiler for AI pipelines</h3>
+                <h3 class="mt-4 font-serif text-4xl text-white">Visual backend builder for APIs, AI agents, and automations</h3>
               </div>
               <div class="case-study-copy">
                 <p class="case-study-label">Problem</p>
-                <p>Teams need a way to compose AI workflows visually without giving up execution discipline or deployment realism.</p>
+                <p>Developers building API backends, AI agents, and automations waste time on boilerplate code and fragmented toolchains. Existing solutions either lock you in or require heavy DevOps.</p>
                 <p class="case-study-label">What I built</p>
-                <p>A custom scripting language and compiler that transpiles visual workflows into Python, running in sandboxed Kubernetes pods with gVisor isolation.</p>
-                <p class="case-study-label">How it works</p>
-                <p>Workflows are defined in a custom DSL, compiled to Python, and executed on k3s clusters with gVisor-sandboxed containers for multi-tenant workload isolation.</p>
+                <p>A visual canvas that compiles drag-and-drop workflows into real Python. 33 plugins across triggers, AI, logic, and integrations. Node-by-node visual debugging — inspect variables at any step in the browser.</p>
+                <p class="case-study-label">Key features</p>
+                <p>AI Agent builder (ReAct + tool calling + streaming), OpenAI-compatible endpoints, MCP platform and trigger servers, CLI runner with zero inbound ports, real-time collaboration, Stripe billing.</p>
               </div>
             </div>
             <div class="mt-6 flex flex-wrap gap-3">
               <span class="stack-pill">Python</span>
               <span class="stack-pill">TypeScript</span>
+              <span class="stack-pill">React</span>
               <span class="stack-pill">k3s</span>
               <span class="stack-pill">gVisor</span>
-              <span class="stack-pill">Custom DSL</span>
+              <span class="stack-pill">MCP</span>
               <a class="chip-link" href="https://tensorify.io" target="_blank" rel="noreferrer">Live</a>
             </div>
           </article>
@@ -183,7 +184,7 @@
             <p class="meta-label">Infrastructure</p>
             <h3 class="mt-4 font-serif text-4xl text-white">Flexx.dev</h3>
             <p class="mt-4 text-sm leading-7 text-slate-300">
-              Redis-as-a-Service with automated provisioning and namespace isolation. Built a custom Go agent that handles build and deployment orchestration.
+              Kernel-as-a-Service platform with custom Go agent for build and deployment orchestration. Exploring low-level infrastructure primitives.
             </p>
           </article>
           <article class="panel lab-card reveal delay-1 p-6 md:p-7" data-reveal>
@@ -191,6 +192,20 @@
             <h3 class="mt-4 font-serif text-4xl text-white">Reactor</h3>
             <p class="mt-4 text-sm leading-7 text-slate-300">
               LangGraph-based ReAct agent with file, shell, web, and API tools. Exploring tool-using autonomous workflows and multi-agent coordination.
+            </p>
+          </article>
+          <article class="panel lab-card reveal delay-2 p-6 md:p-7" data-reveal>
+            <p class="meta-label">AI + Quantum</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">qbitlab</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              AI agent for quantum computing workflows. Exploring the intersection of LLM-based agents and quantum tooling with LangGraph.
+            </p>
+          </article>
+          <article class="panel lab-card reveal delay-3 p-6 md:p-7" data-reveal>
+            <p class="meta-label">Voice AI</p>
+            <h3 class="mt-4 font-serif text-4xl text-white">Dictator</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              Privacy-first local voice assistant for Linux. "Hey Jarvis" wake word, fully offline (Whisper + Qwen 2.5 + openwakeword).
             </p>
           </article>
         </div>
